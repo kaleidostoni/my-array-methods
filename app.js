@@ -84,11 +84,11 @@ function mySort(array)
 		{
 			for(var j=0;j<(array.length-i);j++)
 			{
-				if(array[j]>array[j+1])
+				if(array[j]>array[j+1])//compara las cifra  izquierda con la derecha de a lado(+1)
 				{
-					k=array[j+1];
-                    array[j+1]=array[j];
-					array[j]=k;
+					k=array[j+1];//si es mayor la asigna a la variable k
+                    array[j+1]=array[j];//el indice que ocupaba j+1 lo asigna  al valor que se encuentra en j
+					array[j]=k; //el indice que ocupaba j va a asignarsele el valor de la variable k
 				}
 			}
 		}
