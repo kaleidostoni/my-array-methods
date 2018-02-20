@@ -9,11 +9,13 @@ function miForEach(arreglo, callback){
 
 function myforEach(array,callback){
     for(var i = 0; i<array.length; i++){
-        console.log(array[i]);
+        callback(array[i]);
     }
 }
 
-myforEach([1,2,3],function(){});
+myforEach([1,2,3],function(number){
+    console.log(number);
+});
 
 
 /*2 ) Crea tu propia función map que funcione igual a Array.map. Algo asi:
@@ -25,10 +27,12 @@ function myMap(array,callback){
     for(var i = 0; i<array.length; i++){
          newArray.push(array[i]);
     }
-    console.log(newArray);
+    callback(newArray)
 }
 
-myMap(['a','b','c','d','e'],function(){});
+myMap(['a','b','c','d','e'],function(mapped){
+    console.log(mapped);
+});
 
 /*3 ) Crea tu propia función filter que funcione igual a Array.filter. Algo asi:
 function miFilter(arreglo, filter){
@@ -42,10 +46,12 @@ function myFilter(array,callback){
             loveArray.push(array[i]);
         }
         
-    }console.log(loveArray);
+    }callback(loveArray);
 }
 
-myFilter(['love','hate','hate','love','love','love'],function(){});
+myFilter(['love','hate','hate','love','love','love'],function(justLove){
+    console.log(justLove)
+});
 
 /*4 ) Crea tu propia función reduce que funcione igual a Array.reduce. Algo asi:
 function miReduce(arreglo, reduce){
@@ -56,9 +62,11 @@ function myReduce(array,callback){
     for(var i = 0; i<array.length; i++){
         sum += array[i];
     }
-    console.log(sum);
+    callback(sum);
 }
- myReduce([5,10,15,20],function(){});
+ myReduce([5,10,15,20],function(cipher){
+     console.log(cipher)
+ });
 
  /*1 ) Crea tu propia función sort que funcione igual a Array.sort. Algo asi:
 function miSort(arreglo, callback){
@@ -78,7 +86,7 @@ function mySort(array,callback){
 
 mySort(['naranja','Naranja'],function(){});*/
 
-function mySort(array)
+function mySort(array,callback)
 	{
 		for(var i=1;i<array.length;i++)
 		{
@@ -92,7 +100,9 @@ function mySort(array)
 				}
 			}
 		}
-		console.log(array);
+		callback(array);
     }
     
-    mySort([3,65,2,8],function(){});
+    mySort([3,65,2,8],function(sorted){
+        console.log(sorted);
+    });
