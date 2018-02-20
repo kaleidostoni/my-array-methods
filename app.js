@@ -77,3 +77,22 @@ function mySort(array,callback){
 }
 
 mySort(['naranja','Naranja'],function(){});*/
+
+function mySort(array)
+	{
+		for(var i=1;i<array.length;i++)
+		{
+			for(var j=0;j<(array.length-i);j++)
+			{
+				if(array[j]>array[j+1])
+				{
+					k=array[j+1];
+                    array[j+1]=array[j];
+					array[j]=k;
+				}
+			}
+		}
+		console.log(array);
+    }
+    
+    mySort([3,65,2,8],function(){});
